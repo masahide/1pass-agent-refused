@@ -5,6 +5,7 @@ Reproduction code for 1password ssh-agent with error connecting to sshd on cento
 # Reproduction procedures
 
 ```bash
+git clone https://github.com/masahide/1pass-agent-refused.git
 # build centos6 sshd image
 docker build . -t testssh
 
