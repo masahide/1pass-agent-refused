@@ -10,6 +10,7 @@ The following operation can be reproduced on MacOS.
 ```bash
 git clone https://github.com/masahide/1pass-agent-refused.git
 # build centos6 sshd image
+cd 1pass-agent-refused
 docker build . -t testssh
 
 # generate rsa 4096bit key
