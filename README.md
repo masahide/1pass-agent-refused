@@ -37,9 +37,9 @@ ssh -i test.id_rsa root@localhost -p10022 hostname
 ```
 docker run  --rm -p 10022:22  testssh /usr/sbin/sshd -d
 
-#Try ssh connection from another console
 # Register the generated private key "test.id_rsa" to 1password
 
+# Try ssh connection from another console
 # Check if the private key is loaded by ssh-add command
 ssh-add -l
 
