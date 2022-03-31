@@ -6,6 +6,11 @@ Reproduction code for 1password ssh-agent with error connecting to sshd on cento
 
 The following operation can be reproduced on MacOS.
 
+1Password Version
+```
+1Password for Mac
+Version 8.7.0-30.NIGHTLY
+```
 
 ```bash
 git clone https://github.com/masahide/1pass-agent-refused.git
