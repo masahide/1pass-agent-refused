@@ -14,24 +14,30 @@ Version 8.7.0-31.NIGHTLY
 
 ```bash
 git clone https://github.com/masahide/1pass-agent-refused.git
-# build centos6 sshd image
 cd 1pass-agent-refused
-docker build . -t testssh
 
 # generate rsa 4096bit key
-ssh-keygen -t rsa -b 4096 -q -C '' -N '' -f ./test.id_rsa 
+ssh-keygen -t rsa -b 4096 -q -C '' -N '' -f ./test.id_rsa
 chmod 600 test.id_rsa*
 
-# Start sshd on port: 10022
-docker run  --rm -p 10022:22  -v $(pwd)/test.id_rsa.pub:/root/.ssh/authorized_keys testssh /usr/sbin/sshd -d
+# build centos6 sshd image
+docker build . -t testssh
 
+# Start sshd on port: 10022
+docker run  --rm -p 10022:22  testssh /usr/sbin/sshd -d
 ```
 
 Try ssh connection from another console
 ```bash
 # Verify connection with local key
 ssh -i test.id_rsa root@localhost -p10022 hostname
+```
 
+
+```
+docker run  --rm -p 10022:22  testssh /usr/sbin/sshd -d
+
+#Try ssh connection from another console
 # Register the generated private key "test.id_rsa" to 1password
 
 # Check if the private key is loaded by ssh-add command
