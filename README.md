@@ -4,6 +4,9 @@ Reproduction code for 1password ssh-agent with error connecting to sshd on cento
 
 # Reproduction procedures
 
+The following operation can be reproduced on MacOS.
+
+
 ```bash
 git clone https://github.com/masahide/1pass-agent-refused.git
 # build centos6 sshd image
