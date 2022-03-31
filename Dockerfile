@@ -8,4 +8,11 @@ RUN /usr/bin/ssh-keygen -q -t rsa -f /etc/ssh/ssh_host_rsa_key -C '' -N '' >&/de
 && /usr/bin/ssh-keygen -q -t dsa -f /etc/ssh/ssh_host_dsa_key -C '' -N '' >&/dev/null \
 && chmod 600 /etc/ssh/ssh_host_*_key \
 && chmod 644 /etc/ssh/ssh_host_*_key.pub \
-&& /sbin/restorecon /etc/ssh/ssh_host_rsa_key.pub
+&& /sbin/restorecon /etc/ssh/ssh_host_rsa_key.pub \
+&& /sbin/restorecon /etc/ssh/ssh_host_dsa_key.pub
+
+RUN mkdir -p /root/.ssh/
+COPY test.id_rsa.pub /root/.ssh/authorized_keys
+RUN chown root:root -R /root/.ssh \
+  & chmod 700 /root/.ssh \
+  & chmod 600 /root/.ssh/*
