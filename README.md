@@ -4,7 +4,7 @@ Reproduction code for 1password ssh-agent with error connecting to sshd on cento
 
 # Reproduction procedures
 
-The following operation can be reproduced on MacOS(11.6.1).
+The following operation can be reproduced on MacOS(ver 11.6.1).
 
 1Password Version
 ```
