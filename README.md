@@ -9,7 +9,7 @@ The following operation can be reproduced on MacOS.
 1Password Version
 ```
 1Password for Mac
-Version 8.7.0-30.NIGHTLY
+Version 8.7.0-31.NIGHTLY
 ```
 
 ```bash
